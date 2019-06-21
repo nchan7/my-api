@@ -30,7 +30,7 @@ app.post("/planes", function(req, res) {
     });
 });
 
-app.put("planes/:id", function(req, res) {
+app.put("/planes/:id", function(req, res) {
     db.plane.update({
         name: req.body.name,
         nickname: req.body.nickname,
@@ -43,7 +43,7 @@ app.put("planes/:id", function(req, res) {
     });
 });
 
-app.delete("planes/:id", function(req, res) {
+app.delete("/planes/:id", function(req, res) {
     db.plane.destroy({
         where: {id: parseInt(req.params.id)}
     }).then(function(count){
